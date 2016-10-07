@@ -1,3 +1,5 @@
+'use strict';
+
 var semver = require('semver');
 var dns = require('dns');
 
