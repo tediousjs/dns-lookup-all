@@ -64,7 +64,7 @@ if (semver.lt(process.version, '1.2.0')) {
     var family, callback, options = { all: true };
 
     if (arguments.length === 2) {
-      callback = family;
+      callback = family_;
     } else {
       callback = callback_;
       options.family = family_;
