@@ -23,9 +23,11 @@ describe('lookupAll', function() {
         return done(err);
       }
 
-      assert.deepEqual(results, [
-        { address: '::1', family: 6 }
-      ]);
+      assert.isAtLeast(results.length, 1);
+
+      results.forEach(function(result) {
+        assert.deepEqual(result, { address: '::1', family: 6 });
+      })
 
       done();
     });
@@ -37,9 +39,11 @@ describe('lookupAll', function() {
         return done(err);
       }
 
-      assert.deepEqual(results, [
-        { address: '127.0.0.1', family: 4 }
-      ]);
+      assert.isAtLeast(results.length, 1);
+
+      results.forEach(function(result) {
+        assert.deepEqual(result, { address: '127.0.0.1', family: 4 });
+      });
 
       done();
     });
