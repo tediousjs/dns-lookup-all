@@ -45,7 +45,7 @@ if (semver.lt(process.version, '1.2.0')) {
           return oldHandler.call(this, addresses);
         }
 
-        const results = [];
+        var results = [];
         for (var i = 0; i < addresses.length; i++) {
           results.push({
             address: addresses[i],
