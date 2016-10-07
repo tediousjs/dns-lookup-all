@@ -16,4 +16,32 @@ describe('lookupAll', function() {
       done();
     });
   });
+
+  it('allows limiting the returned addresses to IPv6', function(done) {
+    lookupAll('localhost', 6, function(err, results) {
+      if (err) {
+        return done(err);
+      }
+
+      assert.deepEqual(results, [
+        { address: '::1', family: 6 }
+      ]);
+
+      done();
+    });
+  });
+
+  it('allows limiting the returned addresses to IPv4', function(done) {
+    lookupAll('localhost', 4, function(err, results) {
+      if (err) {
+        return done(err);
+      }
+
+      assert.deepEqual(results, [
+        { address: '127.0.0.1', family: 4 }
+      ]);
+
+      done();
+    });
+  });
 });
